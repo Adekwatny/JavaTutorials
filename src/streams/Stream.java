@@ -16,7 +16,7 @@ public class Stream {
 		try
 		{
 			in = new BufferedReader(new FileReader("ttx.txt"));
-			out = new PrintWriter(new FileWriter("tttx.txt"));
+			out = new PrintWriter(new FileWriter("tttx.txt"),true);
 			
 			String i;
 			while((i = in.readLine()) !=null)
