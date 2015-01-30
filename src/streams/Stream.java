@@ -1,25 +1,27 @@
 package streams;
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 public class Stream {
 
 	public static void main(String[] args)throws IOException 
 	{
-		FileInputStream in = null;
-		FileOutputStream out = null;
+		BufferedReader in = null;
+		PrintWriter out = null;
 		
 		try
 		{
-			in = new FileInputStream("ttx.txt");
-			out = new FileOutputStream("tttx.txt");
+			in = new BufferedReader(new FileReader("ttx.txt"));
+			out = new PrintWriter(new FileWriter("tttx.txt"));
 			
-			int i;
-			while((i = in.read()) != -1)
+			String i;
+			while((i = in.readLine()) !=null)
 			{
-				out.write(i);
+				out.println(i);
 			}
 		}
 		finally
